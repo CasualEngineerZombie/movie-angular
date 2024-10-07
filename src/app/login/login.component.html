@@ -1,0 +1,30 @@
+<!-- Login Card -->
+<div class="card flex-1 bg-base-100 shadow-xl">
+  <div class="card-body">
+      <h2 class="card-title text-2xl font-bold mb-4">Login</h2>
+      <form (ngSubmit)="onSubmit()">
+          <div class="form-control">
+              <label class="label">
+                  <span class="label-text">Username</span>
+              </label>
+              <input type="text" [(ngModel)]="username" name="username" placeholder="john_doe" class="input input-bordered" required />
+          </div>
+          <div class="form-control mt-4">
+              <label class="label">
+                  <span class="label-text">Password</span>
+              </label>
+              <input type="password" [(ngModel)]="password" name="password" placeholder="Enter your password" class="input input-bordered" required />
+              <label class="label">
+                  <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+              </label>
+          </div>
+          <div class="form-control mt-6">
+              <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+          @if (errorMessage) {
+          <div  class="text-red-500 mt-4">{{ errorMessage }}</div> <!-- Error message display -->
+
+          }
+      </form>
+  </div>
+</div>
